@@ -11,7 +11,7 @@ new Vue({
           {
             question: "你喜欢谁",
             options: ["鸡块", "汉堡", "钝角"],
-            correct: 2,
+            correct: 1,
             isFinal: true, // ���Ϊ���һ������
           },
         ],
