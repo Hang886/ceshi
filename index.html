@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>快问快答</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div v-if="currentQuestion">
+      <h2>{{ currentQuestion.question }}</h2>
+      <button 
+        v-for="(option, index) in currentQuestion.options" 
+        :key="index"
+        @click="handleAnswer(index)"
+      >
+        {{ option }}
+      </button>
+    </div>
+    <div v-if="showResult">
+      <img :src="resultGif" alt="Result GIF" />
+      <button @click="resetQuiz">再来一次</button>
+    </div>
+  </div>
+
+  <!-- ���� Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!-- �����Զ���� JavaScript �ļ� -->
+  <script src="script.js"></script>
+</body>
+</html>
